@@ -1,0 +1,35 @@
+{
+    "name":"Privacy Extension for WhatsApp Web",
+    "description": "A non-profit open-source privacy extension for WhatsApp Web.",
+    "version":"1.0.0",
+    "manifest_version": 3,
+
+    "permissions": [
+        "tabs",
+        "storage",
+        "scripting"
+    ],
+
+    "content_scripts": [{
+        "js": ["loader.js"],
+        "matches": ["https://web.whatsapp.com/*"]
+    }],
+
+    "action": {
+        "default_popup": "assets/popup/index.html",
+        "default_title": "Privacy Extension for WhatsApp Web"
+    },
+
+    "background": {
+        "service_worker": "background.js"
+    },
+
+    "host_permissions": ["https://web.whatsapp.com/*"],
+
+    "web_accessible_resources": [
+        {
+            "resources": ["assets/css/*"],
+            "matches": ["https://web.whatsapp.com/*"]
+        }
+    ]
+}
