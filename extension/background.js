@@ -1,5 +1,7 @@
 chrome.runtime.onInstalled.addListener(onInstalledListener);
 
+chrome.tabs.query({url: "https://web.whatsapp.com"}, function(tabs) {statusHandler(tabs);});
+
 // Set default value if the data is null
 function setDefaultIfNull(data, key, defaultValue) {
     if (data[key] == null) {
@@ -33,4 +35,3 @@ function statusHandler(tabs) {
         });
     };
 };
-chrome.tabs.query({url: "https://web.whatsapp.com/"}, function(tabs) {statusHandler(tabs);});
