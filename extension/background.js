@@ -28,8 +28,8 @@ function onInstalledListener() {
 // Refresh extension on webpage reload
 function statusHandler(tabs) {
     if (tabs.length !== 0) {
-        tabs.forEach(function(tab) {
-            chrome.tabs.executeScript(tab.id, {file: "loader.js"});
+        tabs.forEach(function(tabs) {
+            chrome.tabs.executeScript(tabs.id, {file: "loader.js"});
         });
     };
 };
